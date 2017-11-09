@@ -4,7 +4,7 @@ Class Database {
     private $conexao;
 
     public function __construct(){
-        $this->conexao = new mysqli('localhost','root','1234','php_work');
+        $this->conexao = new mysqli('localhost','user','password','db');
         // Verifica se ocorreu algum erro
         if (mysqli_connect_errno()) {
             die('Não foi possível conectar-se ao banco de dados: ' . mysqli_connect_error());
