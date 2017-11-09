@@ -41,7 +41,7 @@ Class Database {
         for ($i=0; $i < $tamanhoGrupoControle; $i++) {
             do {
                 $idPaciente = mt_rand(0,count($arrayDePacientes) - 1);
-            } while ($grupoControle[array_search($idPaciente,$grupoControle)] == $idPaciente);
+            } while (array_search($idPaciente,$grupoControle) !== false);
 
             $grupoControle[] = $idPaciente;
         }
@@ -49,7 +49,7 @@ Class Database {
         for ($i=0; $i < $tamanhoGrupoIntervencao; $i++) {
             do {
                 $idPaciente = mt_rand(0,count($arrayDePacientes) - 1);
-            } while($grupoControle[array_search($idPaciente,$grupoControle)] == $idPaciente || $grupoIntervencao[array_search($idPaciente,$grupoIntervencao)] == $idPaciente);
+            } while(array_search($idPaciente,$grupoControle) !== false || array_search($idPaciente,$grupoIntervencao) !== false);
 
             $grupoIntervencao[] = $idPaciente;
         }
